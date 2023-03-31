@@ -26,9 +26,9 @@ def convert_zip_file(zip_file_path):
                       background = Image.new('RGB', image.size, (255, 255, 255))
                       background.paste(image, mask=image.split()[3])
                       image = background
-                      image.convert('RGB').save(image_path, 'JPEG', quality=80)
+                      image.convert('RGB').save(image_path, 'JPEG', quality=70)
                     else:
-                      image.save(image_path, 'JPEG', quality=80)
+                      image.save(image_path, 'JPEG', quality=70)
     print("Image compressed")
     
     # Create a new zip file with the converted images
@@ -43,7 +43,8 @@ def convert_zip_file(zip_file_path):
 
 ##
 def main():
-    convert_zip_file(r".zip")
+    filepath = input("Enter full filepath: ")
+    convert_zip_file(filepath)
 
 
 
